@@ -1,7 +1,7 @@
 :root {
 	--col-black: #000;
-	--p1: url(./p1.svg);
-	--p2: url(./p2.svg);
+	--p1: url(p1.svg);
+	--p2: url(p2.svg);
 	--border: 4px solid var(--col-black);
 }
 
