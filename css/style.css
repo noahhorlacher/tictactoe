@@ -1,5 +1,6 @@
 :root {
 	--col-black: #000;
+	--col-white: #fff;
 	--p1: url(/svg/p1.svg);
 	--p2: url(/svg/p2.svg);
 	--border: 4px solid var(--col-black);
@@ -84,4 +85,51 @@ btn {
 btn:hover {
 	background: var(--col-black);
 	color: white;
+}
+
+switch {
+	display: inline-flex;
+	justify-content: center;
+	align-items: stretch;
+	margin: 1em 0;
+	border: 2px solid var(--col-black);
+	background-color: var(--col-black);
+}
+
+switch mode {
+	background-color: var(--col-white);
+	line-height: 100%;
+	opacity: 0.7;
+	padding: 0.3em 0.7em;
+	user-select: none;
+	cursor: pointer;
+}
+
+switch mode:hover {
+	background: var(--col-white);
+	color: var(--col-black);
+	opacity: 0.8;
+}
+
+switch mode.active {
+	background-color: var(--col-white);
+	color: var(--col-black);
+	opacity: 1;
+}
+
+label {
+	display: block;
+	margin: 1em auto 0.5em auto;
+	visibility: hidden;
+}
+
+select {
+	display: inline-block;
+	margin-bottom: 2em;
+	visibility: hidden;
+}
+
+label.visible,
+select.visible {
+	visibility: visible;
 }
