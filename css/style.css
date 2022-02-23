@@ -127,18 +127,19 @@ switch mode.active {
 }
 
 label {
-	display: block;
+	display: none;
 	margin: 0.5em auto;
-	visibility: hidden;
 }
 
 select {
-	display: inline-block;
+	display: none;
 	margin-bottom: 2em;
-	visibility: hidden;
 }
 
-label.visible,
+label.visible {
+	display: block;
+}
+
 select.visible {
-	visibility: visible;
+	display: inline-block;
 }
