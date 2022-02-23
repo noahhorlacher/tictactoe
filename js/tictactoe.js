@@ -287,7 +287,6 @@ function bot_move(player_cell) {
         // else random cell
         if (!cell) {
             // choose random cell
-            console.log('random backup cell')
             let empty_cells = document.querySelectorAll('cell[value="0"]')
             cell = empty_cells[Math.floor(Math.random() * empty_cells.length)]
         }
@@ -302,7 +301,7 @@ function bot_move(player_cell) {
     on_move(cell)
 }
 
-UI.cpumode.select.addEventListener('change', () => cpumode = UI.cpumode.select.value)
+UI.cpumode.select.addEventListener('change', () => cpumode = parseInt(UI.cpumode.select.value))
 
 // reset game
 function reset() {
