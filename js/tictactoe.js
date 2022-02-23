@@ -227,14 +227,10 @@ function bot_move(player_cell) {
             // strategy
             // get cell values as string
             let boardstate = UI.board.cells.reduce((a, b) => a + `${b.reduce((c, d) => c + `${d.getAttribute('value')}`, '')}`, '')
+
+            // get boardstate rotated (so cols = rows)
             let boardstate_rot = ''
-
             for (let x = 0; x < 3; x++) for (let y = 0; y < 3; y++) boardstate_rot += cell_value(x, y)
-
-            console.log(boardstate_rot)
-
-            // boardstate mod 2, so only enemy fields are 1
-            let boardstate_m2 = UI.board.cells.reduce((a, b) => a + `${b.reduce((c, d) => c + `${parseInt(d.getAttribute('value')) % 2}`, '')}`, '')
 
             // check for almost complete enemy rows
             let almost_complete_row = ['011', '101', '110']
@@ -295,7 +291,6 @@ function bot_move(player_cell) {
         let empty_cells = document.querySelectorAll('cell[value="0"]')
         cell = empty_cells[Math.floor(Math.random() * empty_cells.length)]
     }
-
 
     // commence turn
     on_move(cell)

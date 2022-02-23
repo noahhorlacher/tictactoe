@@ -3,9 +3,9 @@
 :root {
 	--col-black: #000;
 	--col-white: #fff;
-	--p1: url(/svg/p1.svg);
-	--p2: url(/svg/p2.svg);
-	--border: 4px solid var(--col-black);
+	--p1: url(../svg/p1.svg);
+	--p2: url(../svg/p2.svg);
+	--border: 2px solid var(--col-black);
 }
 
 html,
@@ -33,16 +33,13 @@ board {
 	height: 60vmin;
 	max-width: 550px;
 	max-height: 550px;
+	box-shadow: var(--shadow-2);
 }
 
 row {
 	display: flex;
 	flex-wrap: nowrap;
 	height: 60vw;
-}
-
-row:last-child {
-	border: 0;
 }
 
 cell {
@@ -66,12 +63,20 @@ cell[value='2'] {
 	background-image: var(--p2);
 }
 
-row cell:not(:first-of-type) {
+row cell {
 	border-left: 0;
 }
 
-row:not(:first-of-type) cell {
+row cell:last-of-type {
+	border-right: 0;
+}
+
+row cell {
 	border-top: 0;
+}
+
+row:last-of-type cell {
+	border-bottom: 0;
 }
 
 btn {
@@ -123,7 +128,7 @@ switch mode.active {
 
 label {
 	display: block;
-	margin: 1em auto 0.5em auto;
+	margin: 0.5em auto;
 	visibility: hidden;
 }
 
